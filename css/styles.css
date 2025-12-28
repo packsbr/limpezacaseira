@@ -1,0 +1,801 @@
+/* ============================================
+   RESET & BASE STYLES
+   ============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: #1f2937;
+    background: #f9faf7;
+    line-height: 1.6;
+}
+
+/* ============================================
+   COLOR PALETTE
+   ============================================ */
+:root {
+    --primary: #2b9d6a;
+    --primary-light: #e8f5f0;
+    --accent: #f97316;
+    --accent-light: #fff5f0;
+    --dark: #1f2937;
+    --light-gray: #f3f4f6;
+    --border: #e5e7eb;
+    --text-muted: #6b7280;
+}
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 3.5rem;
+    letter-spacing: -0.02em;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+h4 {
+    font-size: 1.125rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+.highlight {
+    color: var(--primary);
+}
+
+/* ============================================
+   CONTAINER & GRID
+   ============================================ */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ============================================
+   ALERTS & BADGES
+   ============================================ */
+.alert-bar {
+    background: var(--accent);
+    color: white;
+    text-align: center;
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+.badge {
+    display: inline-block;
+    background: var(--primary-light);
+    color: var(--primary);
+    padding: 8px 16px;
+    border-radius: 9999px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.badge-featured {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--accent);
+    color: white;
+    text-align: center;
+    padding: 8px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn-lg {
+    padding: 16px 32px;
+    font-size: 18px;
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: white;
+    box-shadow: 0 10px 25px rgba(249, 115, 22, 0.2);
+}
+
+.btn-primary:hover {
+    background: #ea6317;
+    transform: translateY(-2px);
+    box-shadow: 0 15px 35px rgba(249, 115, 22, 0.3);
+}
+
+.btn-outline {
+    background: white;
+    color: var(--primary);
+    border: 2px solid var(--border);
+}
+
+.btn-outline:hover {
+    background: var(--primary-light);
+    border-color: var(--primary);
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+.hero-section {
+    background: linear-gradient(135deg, #e8f5f0 0%, white 100%);
+    padding: 60px 0 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.hero-text {
+    padding: 20px;
+}
+
+.hero-subtitle {
+    font-size: 1.125rem;
+    color: var(--text-muted);
+    margin-bottom: 30px;
+    line-height: 1.8;
+}
+
+.social-proof {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 30px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.avatars {
+    display: flex;
+    margin-right: 8px;
+}
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 2px solid white;
+    margin-left: -8px;
+    object-fit: cover;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.avatar:first-child {
+    margin-left: 0;
+}
+
+.hero-image {
+    position: relative;
+}
+
+.product-image {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+    border: 4px solid white;
+    transform: rotate(2deg);
+    transition: transform 0.5s ease;
+}
+
+.product-image:hover {
+    transform: rotate(0deg);
+}
+
+.floating-badge {
+    position: absolute;
+    bottom: -30px;
+    left: -40px;
+    background: white;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    animation: bounce 3s infinite;
+}
+
+.floating-badge .icon {
+    font-size: 28px;
+}
+
+.floating-badge p:first-of-type {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-weight: 600;
+    margin: 0;
+}
+
+.floating-badge .bold {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--dark);
+    margin: 0;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* ============================================
+   BENEFITS SECTION
+   ============================================ */
+.benefits-section {
+    background: white;
+    padding: 80px 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-header h2 {
+    margin-bottom: 15px;
+}
+
+.section-header p {
+    font-size: 1.125rem;
+    color: var(--text-muted);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.benefit-card {
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+    border: 1px solid var(--border);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.benefit-card:hover {
+    border-color: var(--primary);
+    box-shadow: 0 10px 30px rgba(43, 157, 106, 0.1);
+}
+
+.benefit-icon {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.benefit-card h3 {
+    margin-bottom: 10px;
+    color: var(--dark);
+}
+
+.benefit-card p {
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+/* ============================================
+   RECIPES SECTION
+   ============================================ */
+.recipes-section {
+    background: linear-gradient(135deg, #f0f9f7 0%, #f5f7f5 100%);
+    padding: 80px 0;
+}
+
+.recipes-content {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.recipes-list h2 {
+    margin-bottom: 40px;
+}
+
+.recipes-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.recipe-item {
+    background: white;
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    font-weight: 500;
+    color: var(--dark);
+    transition: all 0.3s ease;
+}
+
+.recipe-item:hover {
+    box-shadow: 0 5px 15px rgba(43, 157, 106, 0.1);
+    transform: translateY(-2px);
+}
+
+.bonus-box {
+    background: white;
+    padding: 32px;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border: 1px solid var(--border);
+}
+
+.bonus-box h3 {
+    text-align: center;
+    margin-bottom: 24px;
+    color: var(--primary);
+}
+
+.bonus-items {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.bonus-item {
+    display: flex;
+    gap: 12px;
+    padding: 12px;
+    background: #f9f9f9;
+    border-radius: 12px;
+}
+
+.bonus-icon {
+    font-size: 20px;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.bonus-item h4 {
+    margin: 0 0 4px 0;
+    color: var(--dark);
+}
+
+.bonus-item p {
+    margin: 0;
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+/* ============================================
+   TESTIMONIALS SECTION
+   ============================================ */
+.testimonials-section {
+    background: white;
+    padding: 80px 0;
+}
+
+.testimonials-section h2 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.testimonial-card {
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+    border: 1px solid var(--border);
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
+}
+
+.testimonial-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    border: 4px solid white;
+    object-fit: cover;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.testimonial-quote {
+    font-style: italic;
+    color: var(--text-muted);
+    margin-bottom: 15px;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.testimonial-card h4 {
+    margin: 15px 0 10px 0;
+    color: var(--dark);
+}
+
+.stars {
+    color: #fbbf24;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+/* ============================================
+   PRICING SECTION
+   ============================================ */
+.pricing-section {
+    background: linear-gradient(135deg, #f0f9f7 0%, #fff 100%);
+    padding: 80px 0;
+}
+
+.pricing-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.pricing-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 18px;
+    border: 2px solid var(--border);
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.pricing-card.featured {
+    border-color: var(--accent);
+    box-shadow: 0 20px 50px rgba(249, 115, 22, 0.15);
+    transform: scale(1.05);
+}
+
+.pricing-card h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: var(--dark);
+}
+
+.price {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: var(--primary);
+    margin: 20px 0;
+}
+
+.pricing-card.featured .price {
+    color: var(--accent);
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+.price-section {
+    margin: 20px 0;
+}
+
+.pricing-card > p {
+    color: var(--text-muted);
+    margin-bottom: 30px;
+}
+
+.features {
+    list-style: none;
+    text-align: left;
+    margin: 30px 0;
+    padding: 0;
+}
+
+.features li {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--light-gray);
+    color: var(--dark);
+    font-size: 14px;
+}
+
+.features li:last-child {
+    border-bottom: none;
+}
+
+.pricing-card .btn {
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* ============================================
+   FAQ SECTION
+   ============================================ */
+.faq-section {
+    background: white;
+    padding: 80px 0;
+}
+
+.faq-section h2 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.faq-items {
+    max-width: 700px;
+    margin: 0 auto 50px;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.faq-question {
+    background: var(--light-gray);
+    padding: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    color: var(--dark);
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.faq-question:hover {
+    background: var(--primary-light);
+}
+
+.toggle-icon {
+    font-size: 12px;
+    transition: transform 0.3s ease;
+}
+
+.faq-item.active .toggle-icon {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    padding: 20px;
+    color: var(--text-muted);
+    display: none;
+}
+
+.faq-item.active .faq-answer {
+    display: block;
+}
+
+.guarantee-box {
+    background: var(--light-gray);
+    border: 2px solid var(--primary-light);
+    border-radius: 18px;
+    padding: 40px 30px;
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.guarantee-icon {
+    font-size: 40px;
+    flex-shrink: 0;
+}
+
+.guarantee-box h3 {
+    margin-bottom: 10px;
+}
+
+.guarantee-box p {
+    color: var(--text-muted);
+    margin: 0;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+    background: #1f2937;
+    color: #9ca3af;
+    padding: 40px 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+.footer-secure {
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.footer p {
+    margin: 0;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+    
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .recipes-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .recipes-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .pricing-card.featured {
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 40px 0 20px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.75rem;
+    }
+    
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .pricing-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .guarantee-box {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .floating-badge {
+        bottom: -20px;
+        left: 20px;
+        font-size: 12px;
+        padding: 12px;
+    }
+    
+    .hero-text {
+        padding: 0;
+    }
+    
+    .btn-lg {
+        padding: 14px 24px;
+        font-size: 16px;
+    }
+    
+    .price {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    h1 {
+        font-size: 1.75rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    .hero-section {
+        padding: 30px 0 15px;
+    }
+    
+    .benefits-section,
+    .recipes-section,
+    .testimonials-section,
+    .pricing-section,
+    .faq-section {
+        padding: 40px 0;
+    }
+    
+    .bonus-box,
+    .pricing-card {
+        padding: 20px;
+    }
+    
+    .recipes-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .social-proof {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .avatars {
+        margin-right: 0;
+        margin-bottom: 8px;
+    }
+    
+    .floating-badge {
+        bottom: -15px;
+        left: 10px;
+    }
+}
